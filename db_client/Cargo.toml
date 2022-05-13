@@ -1,0 +1,13 @@
+[package]
+name = "db_client"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+anyhow = "1.0"
+base64 = "0.13"
+bb8-diesel = "0.3"
+diesel = { version = "1.4", features = ["postgres", "chrono"] }
+diesel_migrations = "1.4"
+dotenv = "0.15.0"
+lazy_static = "1.4.0"

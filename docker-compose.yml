@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: dev-server.Dockerfile
+    environment:
+      - DATABASE_URL=postgres://postgres:mysecretpassword@db:5432/postgres
+    depends_on:
+      - db
+    ports:
+      - 3030:3030
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+    ports:
+      - 5431:5432
+    volumes:
+      - postgres_volume:/var/lib/postgresql
+
+volumes:
+  postgres_volume: {}

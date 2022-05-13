@@ -1,0 +1,5 @@
+[workspace]
+members = ["server", "db_client"]
+
+[patch.crates-io]
+bb8-diesel = { git = "https://github.com/dyedgreen/bb8-diesel", branch = "master" }

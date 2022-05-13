@@ -1,0 +1,27 @@
+name: Linting
+
+on: 
+  pull_request:
+    branches:
+      - master
+
+env:
+  RUST_BACKTRACE: 1
+
+jobs:
+  clippy:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v1
+
+      - name: Install stable Rust and clippy
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: 1.59
+          components: clippy
+
+      - name: Check for code smells and unidiomatic code
+        run: cargo clippy -- --deny warnings
