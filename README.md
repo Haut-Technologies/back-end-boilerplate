@@ -27,12 +27,6 @@ server:
 sh restart-dev-server.sh
 ```
 
-This could take at least 30 seconds even without any changes. Could
-think about improving this by running the `rust-musl-builder` image
-directly with volumes for the Rust source code instead of having
-to rebuild dev-builder. Another idea is breaking the crate into
-smaller crates which will also speed up IDE syncing.
-
 ## Database migrations
 e.g.
 ```sh
