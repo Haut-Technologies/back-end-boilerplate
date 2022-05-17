@@ -6,6 +6,6 @@ pub struct Mutation;
 #[graphql_object(context = Context)]
 impl Mutation {
     fn dummy() -> bool {
-        unimplemented!()
+        true
     }
 }
