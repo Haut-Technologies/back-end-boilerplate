@@ -4,10 +4,16 @@
 - Install VSCode plugin `maklad:rustanalyzer`
 - Install docker
     - Debian-based Linux distributions: `sudo apt install docker.io`
-- Install docker compose if running Linux
+- Install `docker-compose` if running Linux
 ```sh
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+```
+- Install `diesel` CLI with the PostgreSQL feature - requires libpq client library to be installed, installation depends on OS distribution
+    - Ubuntu: https://howtoinstall.co/en/libpq-dev
+    - MacOS: https://formulae.brew.sh/formula/libpq
+```sh
+cargo install diesel_cli --no-default-features --features postgres
 ```
 and then run the following commands:
 
