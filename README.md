@@ -11,7 +11,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 - Install `diesel` CLI with the PostgreSQL feature - requires libpq client library to be installed, installation depends on OS distribution
     - Ubuntu: https://howtoinstall.co/en/libpq-dev
-    - MacOS: https://formulae.brew.sh/formula/libpq
+    - MacOS: https://formulae.brew.sh/formula/postgresql and https://formulae.brew.sh/formula/libpq 
 ```sh
 cargo install diesel_cli --no-default-features --features postgres
 ```
