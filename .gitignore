@@ -1,14 +1,5 @@
-/target
-/docker-target
+target
+rust-analyzer-target
+cargo
 .env
 .DS_Store
-dev-*.Dockerfile
-bin
-
-# some large files generated from profiling
-*.mm_profdata
-chrome_profiler.json
-cargo-timing*.html
-
-# flamegraphs
-/*.svg

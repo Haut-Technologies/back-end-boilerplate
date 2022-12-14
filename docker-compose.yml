@@ -3,15 +3,23 @@ services:
   server:
     build:
       context: .
-      dockerfile: dev-server.Dockerfile
+      dockerfile: Dockerfile
     environment:
       - DATABASE_URL=postgres://postgres:mysecretpassword@db:5432/postgres
+      - CARGO_HOME=/cargo_workspace/cargo
+      - CARGO_TARGET_DIR=/cargo_workspace/target
     depends_on:
       - db
     ports:
       - 3030:3030
+    volumes:
+      - ./cargo_workspace:/cargo_workspace
+    command:
+      - sh
+      - -c
+      - cp /usr/bin/cargo-watch cargo_workspace/cargo/bin/cargo-watch && cd cargo_workspace && cargo watch -i '**/*target' -i cargo -x run 
   db:
-    image: postgres
+    image: postgres:12
     environment:
       - POSTGRES_PASSWORD=mysecretpassword
     ports:

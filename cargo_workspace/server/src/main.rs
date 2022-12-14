@@ -1,7 +1,5 @@
 use warp::Filter;
 
-extern crate openssl;
-
 mod filters;
 
 #[tokio::main]

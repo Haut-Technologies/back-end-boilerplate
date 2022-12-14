@@ -15,7 +15,7 @@ impl Context {
     }
 
     /// Replaces pl.get()
-    pub async fn conn(&self) -> Result<PooledConnection<'_>> {
-        Ok(self.pl.get().await?)
+    pub async fn conn(&self) -> Result<PooledConnection> {
+        Ok(self.pl.acquire().await?)
     }
 }
