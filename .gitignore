@@ -1,5 +1,4 @@
 target
 rust-analyzer-target
 cargo
-.env
 .DS_Store
