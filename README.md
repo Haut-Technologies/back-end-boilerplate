@@ -10,7 +10,7 @@
     - To run `docker` and `docker-compose` without needing `sudo`: `sudo groupadd docker && sudo usermod -aG docker $USER`. Then logout and login back in again to your computer.
   - For MacOS:
     - `brew install --cask docker`
-  - For Windows: Please use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) or run a virtual machine running Linux and follow instructions for Linux
+  - For Windows: [Install Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
 
 and then run the following commands:
 
